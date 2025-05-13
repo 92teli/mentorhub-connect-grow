@@ -1,0 +1,136 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 29e8480 (updated code)
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 27% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 270 100% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 198 92% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 6% 25%;
+    --muted-foreground: 240 5% 81%;
+
+    --accent: 240 6% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 14% 20%;
+    --input: 240 14% 20%;
+    --ring: 270 100% 62%;
+
+    --radius: 0.75rem;
+<<<<<<< HEAD
+=======
+
+    /* Sidebar always dark */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+>>>>>>> 29e8480 (updated code)
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-darkbg text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .mentor-card-hover {
+    @apply hover:border-mentorpurple/50 hover:shadow-[0_0_30px_rgba(159,64,255,0.3)] transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .mentee-card-hover {
+    @apply hover:border-mentorblue/50 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-mentorpurple to-mentorblue text-transparent bg-clip-text;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(to right, #9F40FF, #38BDF8);
+    border-radius: calc(0.75rem + 1px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gradient-border:hover::after {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
